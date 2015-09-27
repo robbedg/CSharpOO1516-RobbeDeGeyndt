@@ -107,7 +107,7 @@ namespace Opgave01
                 for (int y = 0; y < bmp.Height; y++)
                 {
                     Color gotColor = bmp.GetPixel(x, y);
-                    gotColor = Color.FromArgb(gotColor.R >> bar, gotColor.G >> bar, gotColor.B >> bar);
+                    gotColor = Color.FromArgb(gotColor.R >> bar << bar, gotColor.G >> bar << bar, gotColor.B >> bar << bar);
                     bmp.SetPixel(x, y, gotColor);
                 }
             }
