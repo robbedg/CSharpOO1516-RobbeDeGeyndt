@@ -23,6 +23,7 @@ namespace Opgave01
 
         }
 
+        //Button Red
         private void button1_Click(object sender, EventArgs e)
         {
             Color color = Color.Black;
@@ -53,6 +54,7 @@ namespace Opgave01
 
         }
 
+        //Buton Green
         private void button1_Click_1(object sender, EventArgs e)
         {
             Color color = Color.Black;
@@ -73,6 +75,7 @@ namespace Opgave01
             pictureBox2.Image = bmp;
         }
 
+        //Button Blauw
         private void buttonBlauw_Click(object sender, EventArgs e)
         {
             Color color = Color.Black;
@@ -93,6 +96,7 @@ namespace Opgave01
             pictureBox2.Image = bmp;
         }
 
+        //Scrollbar
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             //int bar = trackBar1.Location;
