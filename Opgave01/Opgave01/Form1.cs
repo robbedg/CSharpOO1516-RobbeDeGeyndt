@@ -16,6 +16,7 @@ namespace Opgave01
         {
             InitializeComponent();
             trackBar1.Visible = false;
+            pictureBox1.Image = new Bitmap(Image.FromFile("TestIMG.jpg"));
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -99,20 +100,21 @@ namespace Opgave01
         //Scrollbar
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            //int bar = trackBar1.Location;
+            int bar = -(trackBar1.Value) + 8;
             Bitmap bmp = new Bitmap(Image.FromFile("TestIMG.jpg"));
             for (int x = 0; x < bmp.Width; x++)
             {
                 for (int y = 0; y < bmp.Height; y++)
                 {
                     Color gotColor = bmp.GetPixel(x, y);
-                    gotColor = Color.FromArgb(gotColor.R >> 2, gotColor.G >> 2, gotColor.B >> 2);
+                    gotColor = Color.FromArgb(gotColor.R >> bar, gotColor.G >> bar, gotColor.B >> bar);
                     bmp.SetPixel(x, y, gotColor);
                 }
             }
             pictureBox2.Image = bmp;
         }
 
+        //Button Resolution.
         private void buttonResolution_Click(object sender, EventArgs e)
         {
             trackBar1.Visible = true;
