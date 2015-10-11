@@ -26,6 +26,8 @@ namespace Opgave02
                 new Session("Session-3",4),
                 new Session("Session-4",4)
             };
+            Console.WriteLine(test.SessionPersonSchedule);
+            Console.ReadLine();
         }
     }
 
