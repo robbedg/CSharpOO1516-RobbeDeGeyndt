@@ -9,9 +9,9 @@ namespace Opgave02
 {
     class Program
     {
+        //Test methode (main)
         static void Main(string[] args)
         {
-            
             Scheduler test = new Scheduler();
             test.Participants = new List<Participant>
             {
@@ -29,11 +29,14 @@ namespace Opgave02
         }
     }
 
+    //Class session
     public class Session
     {
+        //Maximum amount of participants.
         public int MaxParticipants { get; }
+        //Name of the session.
         public String Name { get; }
-
+        //Constructor for session.
         public Session(String name, int maxParticipants)
         {
             this.MaxParticipants = maxParticipants;
@@ -43,9 +46,11 @@ namespace Opgave02
 
     public class Participant
     {
+        //Name of the participant.
         public String Name { get; }
+        //Preferences of the participant.
         public List<int> Preferences { get; }
-
+        //Constructor for participant.
         public Participant(String name, List<int> preferences)
         {
             this.Name = name;
@@ -53,21 +58,25 @@ namespace Opgave02
         }
     }
 
+    //Class scheduler
     public class Scheduler
     {
         public List<Participant> Participants;
         public List<Session> Sessions;
-        public Dictionary<Session, List<Participant>> SessionPersonSchedule = new Dictionary<Session, List<Participant>> { };
-        public Stack participantsToSchedule = new Stack();
+        public Dictionary<Session, List<Participant>> SessionPersonSchedule;
+        public Stack participantsToSchedule;
         public int test = 0;
 
-
+        //Constructor for scheduler
         public Scheduler()
         {
             Participants = new List<Participant> { };
             Sessions = new List<Session> { };
+            SessionPersonSchedule = new Dictionary<Session, List<Participant>> { };
+            participantsToSchedule = new Stack();
         }
 
+        //Fill the stack wit participants.
         public void fillStack()
         {
             for (int i = 0; i < Participants.Count; i++)
@@ -79,10 +88,9 @@ namespace Opgave02
                 var lp = new List<Participant> { };
                 SessionPersonSchedule.Add(Sessions[i], lp);
             }
-            
         }
 
-
+        //Method for calculating the schedule.
         public bool CalculateSchedule()
         {
             if (test == 0)
@@ -97,16 +105,14 @@ namespace Opgave02
             
             foreach (int i in current.Preferences)
             {
-      
                 if (SessionPersonSchedule.TryGetValue(Sessions[i-1], out value))
                 {
                     l = value.Count();
                 }
                 else
                 {
-                    l = 999999;
+                    return false;
                 }
-
                 if (Sessions[i-1].MaxParticipants > l)
                 {
                     if (value != null)
@@ -123,10 +129,8 @@ namespace Opgave02
                     {
                         return (CalculateSchedule());
                     }
-                }
-                
+                }        
             }
-
             SessionPersonSchedule.Clear();
             return false;
         }
