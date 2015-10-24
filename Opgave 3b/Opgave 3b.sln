@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Landscape GUI", "Landscape GUI\Landscape GUI.csproj", "{A539C0D6-9CB8-48EF-8019-00E61792151E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorageInterface", "StorageInterface\StorageInterface.csproj", "{52DCE28A-89C4-4A85-95F3-512AB76488CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorageTestImplementation", "StorageTestImplementation\StorageTestImplementation.csproj", "{44EB5E0B-E0A9-4F1D-9B05-FF10425E2EA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LandscapeGeneratorInterface", "LandscapeGeneratorInterface\LandscapeGeneratorInterface.csproj", "{7BC6C799-54C7-4117-B013-B46AA1B4BEE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LandscapeGeneratorImplementation", "LandscapeGeneratorImplementation\LandscapeGeneratorImplementation.csproj", "{97964975-EFBD-48C9-A1B8-98AFC54AC4C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A539C0D6-9CB8-48EF-8019-00E61792151E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A539C0D6-9CB8-48EF-8019-00E61792151E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A539C0D6-9CB8-48EF-8019-00E61792151E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A539C0D6-9CB8-48EF-8019-00E61792151E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52DCE28A-89C4-4A85-95F3-512AB76488CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52DCE28A-89C4-4A85-95F3-512AB76488CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52DCE28A-89C4-4A85-95F3-512AB76488CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52DCE28A-89C4-4A85-95F3-512AB76488CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44EB5E0B-E0A9-4F1D-9B05-FF10425E2EA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44EB5E0B-E0A9-4F1D-9B05-FF10425E2EA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44EB5E0B-E0A9-4F1D-9B05-FF10425E2EA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44EB5E0B-E0A9-4F1D-9B05-FF10425E2EA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BC6C799-54C7-4117-B013-B46AA1B4BEE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BC6C799-54C7-4117-B013-B46AA1B4BEE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BC6C799-54C7-4117-B013-B46AA1B4BEE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BC6C799-54C7-4117-B013-B46AA1B4BEE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97964975-EFBD-48C9-A1B8-98AFC54AC4C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97964975-EFBD-48C9-A1B8-98AFC54AC4C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97964975-EFBD-48C9-A1B8-98AFC54AC4C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97964975-EFBD-48C9-A1B8-98AFC54AC4C3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
