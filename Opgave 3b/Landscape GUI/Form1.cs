@@ -32,6 +32,7 @@ namespace Opgave_3b
 
         private void buttonRecalculate_Click(object sender, System.EventArgs e)
         {
+            pictureBox.Image = new Bitmap(pictureBox.Width, pictureBox.Height);
             int heightstep = (int)(numericHeightstep.Value);
             int iterations = (int)(numericIterations.Value);
             int height = pictureBox.Height;
@@ -39,9 +40,25 @@ namespace Opgave_3b
 
             landscapeGenerator.ResetPointList(width, height);
 
-            landscapeGenerator.CalculateLandscape(iterations, height);
+            landscapeGenerator.CalculateLandscape(iterations, heightstep);
 
-            List<Point> points = new List<Point>();
+            List<Point> points = landscapeGenerator.PointList;
+
+            Graphics G = Graphics.FromImage(pictureBox.Image);
+
+            using (var p = new Pen(Color.Blue, 4))
+            {
+                for (int x = 0; x < points.Count - 1; x++)
+                {
+                    G.DrawLine(p, points[x], points[x + 1]);
+                }
+            }
+            pictureBox.Refresh();
+        }
+
+        private void numericIterations_ValueChanged(object sender, System.EventArgs e)
+        {
+
         }
     }
 }

@@ -11,9 +11,9 @@ namespace LandscapeGeneratorInterface
 
         void CalculateLandscape(int nrOfIterations, int heightStep);
 
-        //void SaveLandscape(string name);
+        void SaveLandscape(string name);
 
-        //void LoadLandscape(string name);
+        void LoadLandscape(string name);
 
     }
 }

@@ -49,6 +49,14 @@
       <Project>{7bc6c799-54c7-4117-b013-b46aa1b4bee1}</Project>
       <Name>LandscapeGeneratorInterface</Name>
     </ProjectReference>
+    <ProjectReference Include="..\StorageInterface\StorageInterface.csproj">
+      <Project>{52dce28a-89c4-4a85-95f3-512ab76488ca}</Project>
+      <Name>StorageInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StorageTestImplementation\StorageTestImplementation.csproj">
+      <Project>{44eb5e0b-e0a9-4f1d-9b05-ff10425e2ea4}</Project>
+      <Name>StorageTestImplementation</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -95,6 +95,12 @@
             this.numericIterations.Name = "numericIterations";
             this.numericIterations.Size = new System.Drawing.Size(91, 20);
             this.numericIterations.TabIndex = 5;
+            this.numericIterations.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            this.numericIterations.ValueChanged += new System.EventHandler(this.numericIterations_ValueChanged);
             // 
             // Form1
             // 

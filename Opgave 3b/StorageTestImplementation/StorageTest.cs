@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using StorageInterface;
+using DummyBackend;
 
 namespace StorageTestImplementation
 {

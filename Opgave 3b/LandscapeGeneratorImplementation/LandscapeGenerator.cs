@@ -1,4 +1,6 @@
 ﻿using LandscapeGeneratorInterface;
+using LandscapeGeneratorImplementation;
+using DummyBackend;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -7,6 +9,7 @@ namespace LandscapeGeneratorImplementation
 {
     public class LandscapeGenerator : ILandscapeGenerator
     {
+        //private IStorageInterface storageInterface = new DummyBackend();
 
         private List<Point> pointList = new List<Point>();
         private Random random = new Random(); 
@@ -45,12 +48,23 @@ namespace LandscapeGeneratorImplementation
 
         public void CalculateLandscape(int nrOfIterations, int heightStep)
         {
-            Point temp = pointList[0];
-            for (int i = 0; i <= (nrOfIterations - 2); i++)
+            int tempHeightStep = heightStep;
+            for (int i = 0; i < nrOfIterations; i++)
             {
-                pointList.Add(temp);
+                List<Point> temp = CalculateNextIteration(pointList, tempHeightStep);
+                pointList = temp;
+                tempHeightStep = tempHeightStep / 2;
             }
-            CalculateNextIteration(pointList, heightStep);
+        }
+
+        public void SaveLandscape(string name)
+        {
+
+        }
+
+        public void LoadLandscape(string name)
+        {
+
         }
     }
 }
