@@ -85,7 +85,7 @@
             // 
             this.numericHeightstep.Location = new System.Drawing.Point(800, 334);
             this.numericHeightstep.Maximum = new decimal(new int[] {
-            300,
+            150,
             0,
             0,
             0});
