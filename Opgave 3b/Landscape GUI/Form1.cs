@@ -60,5 +60,32 @@ namespace Opgave_3b
         {
 
         }
+
+        private void buttonSave_Click(object sender, System.EventArgs e)
+        {
+            string name = textNaam.Text;
+            landscapeGenerator.SaveLandscape(name);
+        }
+
+        private void buttonLoad_Click(object sender, System.EventArgs e)
+        {
+            string name = textNaam.Text;
+            landscapeGenerator.LoadLandscape(name);
+
+            pictureBox.Image = new Bitmap(pictureBox.Width, pictureBox.Height);
+
+            List<Point> points = landscapeGenerator.PointList;
+
+            Graphics G = Graphics.FromImage(pictureBox.Image);
+
+            using (var p = new Pen(Color.Blue, 4))
+            {
+                for (int x = 0; x < points.Count - 1; x++)
+                {
+                    G.DrawLine(p, points[x], points[x + 1]);
+                }
+            }
+            pictureBox.Refresh();
+        }
     }
 }

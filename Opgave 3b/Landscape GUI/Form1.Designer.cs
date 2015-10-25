@@ -34,6 +34,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.numericHeightstep = new System.Windows.Forms.NumericUpDown();
             this.numericIterations = new System.Windows.Forms.NumericUpDown();
+            this.textNaam = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.buttonSave = new System.Windows.Forms.Button();
+            this.buttonLoad = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericHeightstep)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericIterations)).BeginInit();
@@ -102,11 +106,51 @@
             0});
             this.numericIterations.ValueChanged += new System.EventHandler(this.numericIterations_ValueChanged);
             // 
+            // textNaam
+            // 
+            this.textNaam.Location = new System.Drawing.Point(736, 63);
+            this.textNaam.Name = "textNaam";
+            this.textNaam.Size = new System.Drawing.Size(155, 20);
+            this.textNaam.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(733, 47);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Name:";
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.Location = new System.Drawing.Point(736, 92);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(154, 33);
+            this.buttonSave.TabIndex = 8;
+            this.buttonSave.Text = "Save";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
+            // buttonLoad
+            // 
+            this.buttonLoad.Location = new System.Drawing.Point(737, 131);
+            this.buttonLoad.Name = "buttonLoad";
+            this.buttonLoad.Size = new System.Drawing.Size(154, 33);
+            this.buttonLoad.TabIndex = 9;
+            this.buttonLoad.Text = "Load";
+            this.buttonLoad.UseVisualStyleBackColor = true;
+            this.buttonLoad.Click += new System.EventHandler(this.buttonLoad_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(913, 432);
+            this.Controls.Add(this.buttonLoad);
+            this.Controls.Add(this.buttonSave);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.textNaam);
             this.Controls.Add(this.numericIterations);
             this.Controls.Add(this.numericHeightstep);
             this.Controls.Add(this.label2);
@@ -132,6 +176,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown numericHeightstep;
         private System.Windows.Forms.NumericUpDown numericIterations;
+        private System.Windows.Forms.TextBox textNaam;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.Button buttonLoad;
     }
 }
 

@@ -1,15 +1,15 @@
 ﻿using LandscapeGeneratorInterface;
-using LandscapeGeneratorImplementation;
 using DummyBackend;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using StorageTestImplementation;
 
 namespace LandscapeGeneratorImplementation
 {
     public class LandscapeGenerator : ILandscapeGenerator
     {
-        //private IStorageInterface storageInterface = new DummyBackend();
+        private IStorageInterface storageInterface = new StorageTest();
 
         private List<Point> pointList = new List<Point>();
         private Random random = new Random(); 
@@ -59,12 +59,12 @@ namespace LandscapeGeneratorImplementation
 
         public void SaveLandscape(string name)
         {
-
+            storageInterface.SaveLandscape(name, pointList);
         }
 
         public void LoadLandscape(string name)
         {
-
+            pointList = storageInterface.LoadLandscape(name);
         }
     }
 }
