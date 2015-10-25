@@ -84,6 +84,11 @@
             // numericHeightstep
             // 
             this.numericHeightstep.Location = new System.Drawing.Point(800, 334);
+            this.numericHeightstep.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
             this.numericHeightstep.Name = "numericHeightstep";
             this.numericHeightstep.Size = new System.Drawing.Size(91, 20);
             this.numericHeightstep.TabIndex = 4;

@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Collections.Generic;
 
-namespace DummyBackend
+namespace StorageInterface
 {
     public interface IStorageInterface
     {
