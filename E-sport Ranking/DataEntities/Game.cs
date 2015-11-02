@@ -6,7 +6,25 @@ using System.Threading.Tasks;
 
 namespace DataEntities
 {
-    class Game
+    public abstract class Game
     {
+        private String name { get; set; }
+        private String category { get; set; }
+        public Game(String name, String category)
+        {
+            this.name = name;
+            this.category = category;
+        }
+        public Game() { }
+    }
+
+    public class GameSingle : Game
+    {
+        private List<Player> players { get; set; }
+    }
+
+    public class GameTeam : Game
+    {
+        private List<Team> teams { get; set; }
     }
 }

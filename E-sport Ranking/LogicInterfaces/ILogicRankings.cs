@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataEntities
+namespace LogicInterfaces
 {
-    class Speler
+    interface ILogicRankings
     {
     }
 }

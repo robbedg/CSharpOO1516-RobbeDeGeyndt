@@ -76,6 +76,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataEntities\DataEntities.csproj">
+      <Project>{98bb1983-c320-47bb-b1bf-51a5e9a16cf8}</Project>
+      <Name>DataEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogicImplementation\LogicImplementation.csproj">
+      <Project>{3bdb9ada-0c0a-475e-b54e-0ae7b17ca8bb}</Project>
+      <Name>LogicImplementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogicInterfaces\LogicInterfaces.csproj">
+      <Project>{c343a1e0-5437-424d-9572-4eacd7cd8f4d}</Project>
+      <Name>LogicInterfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

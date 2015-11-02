@@ -43,8 +43,15 @@
     <Compile Include="ILogicGames.cs" />
     <Compile Include="ILogicMatches.cs" />
     <Compile Include="ILogicPlayers.cs" />
+    <Compile Include="ILogicRankings.cs" />
     <Compile Include="ILogicTeams.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataEntities\DataEntities.csproj">
+      <Project>{98bb1983-c320-47bb-b1bf-51a5e9a16cf8}</Project>
+      <Name>DataEntities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
