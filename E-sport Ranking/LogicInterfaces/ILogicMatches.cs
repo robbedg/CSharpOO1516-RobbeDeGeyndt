@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LogicInterfaces
 {
-    interface ILogicMatches
+    public interface ILogicMatches
     {
     }
 }

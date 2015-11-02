@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace LogicInterfaces
 {
-    interface ILogicPlayers
+    public interface ILogicPlayers
     {
+        
+
     }
 }

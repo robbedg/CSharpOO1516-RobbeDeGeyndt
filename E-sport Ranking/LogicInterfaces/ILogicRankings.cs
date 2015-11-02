@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace LogicInterfaces
 {
-    interface ILogicRankings
+    public interface ILogicRankings
     {
+        int getPointsPlayer(string player, String game);
     }
 }

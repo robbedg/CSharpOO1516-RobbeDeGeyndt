@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LogicInterfaces
 {
-    interface ILogicGames
+    public interface ILogicGames
     {
     }
 }
