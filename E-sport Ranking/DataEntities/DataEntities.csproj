@@ -40,10 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Game.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="GameType.cs" />
+    <Compile Include="MatchType.cs" />
+    <Compile Include="PlayerGameRankingType.cs" />
+    <Compile Include="PlayerType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Player.cs" />
-    <Compile Include="Team.cs" />
+    <Compile Include="TeamType.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
