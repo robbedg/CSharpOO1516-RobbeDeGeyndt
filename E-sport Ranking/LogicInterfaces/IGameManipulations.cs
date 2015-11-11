@@ -6,7 +6,7 @@ using DataEntities;
 
 namespace LogicInterfaces
 {
-    interface IGameManipulations
+    public interface IGameManipulations
     {
         List<GameType> GetGames();
         void AddOrUpdateGame(GameType game);

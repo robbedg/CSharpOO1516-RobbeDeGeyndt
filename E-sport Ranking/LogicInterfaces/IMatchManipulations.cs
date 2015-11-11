@@ -8,7 +8,7 @@ using DataEntities;
 
 namespace LogicInterfaces
 {
-    interface IMatchManipulations
+    public interface IMatchManipulations
     {
         List<MatchType> GetMatches(GameType game, ParticipantTypes soloOrTeam, MatchCategories matchCategory);
         List<MatchType> GetMatchesAll(GameType game);

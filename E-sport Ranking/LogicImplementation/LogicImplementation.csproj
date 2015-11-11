@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameManipulations.cs" />
+    <Compile Include="MatchManipulations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -54,6 +56,10 @@
     <ProjectReference Include="..\DataEntities\DataEntities.csproj">
       <Project>{98bb1983-c320-47bb-b1bf-51a5e9a16cf8}</Project>
       <Name>DataEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogicInterfaces\LogicInterfaces.csproj">
+      <Project>{c343a1e0-5437-424d-9572-4eacd7cd8f4d}</Project>
+      <Name>LogicInterfaces</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

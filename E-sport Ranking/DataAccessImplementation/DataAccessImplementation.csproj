@@ -40,9 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameRankingDataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataAccessInterfaces\DataAccessInterfaces.csproj">
+      <Project>{f2fa9846-82b4-4908-b7cf-f6a3bc0988b8}</Project>
+      <Name>DataAccessInterfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataEntities\DataEntities.csproj">
       <Project>{98bb1983-c320-47bb-b1bf-51a5e9a16cf8}</Project>
       <Name>DataEntities</Name>
