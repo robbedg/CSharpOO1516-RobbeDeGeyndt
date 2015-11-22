@@ -15,7 +15,12 @@ namespace LogicImplementation
         IGameRankingDataAccess grda = new GameRankingDataAccess();
         public bool AddOrUpdateTeam(TeamType team)
         {
-            throw new NotImplementedException();
+            if (grda.Teams.Contains(team))
+            {
+                grda.Teams.Remove(team);
+            }
+           grda.Teams.Add(team);
+            return true;
         }
 
         public List<MatchType> GetGameMatchesForTeam(GameType game, TeamType team)
