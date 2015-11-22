@@ -13,7 +13,7 @@ namespace DataEntities
 
         public static bool operator ==(TeamType a, TeamType b)
         {
-            return ((a.Members == b.Members) && (a.Name == b.Name));
+            return (a.Members == b.Members) && (a.Name == b.Name);
         }
 
         public static bool operator !=(TeamType a, TeamType b)

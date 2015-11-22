@@ -42,7 +42,10 @@
   <ItemGroup>
     <Compile Include="GameManipulations.cs" />
     <Compile Include="MatchManipulations.cs" />
+    <Compile Include="PlayerManipulations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RankingSource.cs" />
+    <Compile Include="TeamManipulations.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccessImplementation\DataAccessImplementation.csproj">

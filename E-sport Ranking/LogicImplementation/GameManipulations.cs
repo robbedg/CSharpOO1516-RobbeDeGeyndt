@@ -25,6 +25,7 @@ namespace LogicImplementation
                 grda.Games.Remove(game);
             }
             grda.Games.Add(game);
+            grda.SubmitGameListChanges();
         }
     }
 }

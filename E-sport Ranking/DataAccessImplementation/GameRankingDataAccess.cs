@@ -26,7 +26,11 @@ namespace DataAccessImplementation
             {
                 using (var file = File.OpenRead("GameList.bin"))
                 {
-                    Games = (List<GameType>)formatter.Deserialize(file);
+                    try
+                    {
+                        Games = (List<GameType>)formatter.Deserialize(file);
+                    }
+                    catch (Exception e) { }
                 }
             }
             else
@@ -38,7 +42,10 @@ namespace DataAccessImplementation
             {
                 using (var file = File.OpenRead("PlayerList.bin"))
                 {
-                    Players = (List<PlayerType>)formatter.Deserialize(file);
+                    try {
+                        Players = (List<PlayerType>)formatter.Deserialize(file);
+                    }
+                    catch (Exception e) { }
                 }
             }
             else
@@ -50,7 +57,11 @@ namespace DataAccessImplementation
             {
                 using (var file = File.OpenRead("TeamList.bin"))
                 {
-                    Teams = (List<TeamType>)formatter.Deserialize(file);
+                    try
+                    {
+                        Teams = (List<TeamType>)formatter.Deserialize(file);
+                    }
+                    catch (Exception e) { }
                 }
             }
             else
@@ -62,7 +73,11 @@ namespace DataAccessImplementation
             {
                 using (var file = File.OpenRead("MatchList.bin"))
                 {
-                    MatchList = (List<MatchType>)formatter.Deserialize(file);
+                    try
+                    {
+                        MatchList = (List<MatchType>)formatter.Deserialize(file);
+                    }
+                    catch (Exception e) { }
                 }
             }
             else
@@ -74,7 +89,11 @@ namespace DataAccessImplementation
             {
                 using (var file = File.OpenRead("RankingList.bin"))
                 {
-                    RankingList = (List<PlayerGameRankingType>)formatter.Deserialize(file);
+                        try
+                        {
+                            RankingList = (List<PlayerGameRankingType>)formatter.Deserialize(file);
+                        }
+                        catch (Exception e) { }
                 }
             }
             else
@@ -86,46 +105,62 @@ namespace DataAccessImplementation
         public void SubmitGameListChanges()
         {
             var formatter = new BinaryFormatter();
-            using (var file = File.OpenWrite("GameList.bin"))
-            {
-                formatter.Serialize(file, Games);
+            try {
+                using (var file = File.OpenWrite("GameList.bin"))
+                {
+                    formatter.Serialize(file, Games);
+                }
             }
+            catch(Exception e) { }
         }
 
         public void SubmitPlayerListChanges()
         {
-            var formatter = new BinaryFormatter();
-            using (var file = File.OpenWrite("PlayerList.bin"))
+            try
             {
-                formatter.Serialize(file, Players);
+                var formatter = new BinaryFormatter();
+                using (var file = File.OpenWrite("PlayerList.bin"))
+                {
+                    formatter.Serialize(file, Players);
+                }
             }
+            catch(Exception e) { }
         }
 
         public void SubmitTeamListChanges()
         {
-            var formatter = new BinaryFormatter();
-            using (var file = File.OpenWrite("TeamList.bin"))
-            {
-                formatter.Serialize(file, Teams);
+            try {
+                var formatter = new BinaryFormatter();
+                using (var file = File.OpenWrite("TeamList.bin"))
+                {
+                    formatter.Serialize(file, Teams);
+                }
             }
+            catch (Exception e) { }
         }
 
         public void SubmitmatchListChanges()
         {
-            var formatter = new BinaryFormatter();
-            using (var file = File.OpenWrite("MatchList.bin"))
-            {
-                formatter.Serialize(file, MatchList);
+            try {
+                var formatter = new BinaryFormatter();
+                using (var file = File.OpenWrite("MatchList.bin"))
+                {
+                    formatter.Serialize(file, MatchList);
+                }
             }
+            catch(Exception e) { }  
         }
 
         public void SubmitRankingListChanges()
         {
-            var formatter = new BinaryFormatter();
-            using (var file = File.OpenWrite("RankingList.bin"))
-            {
-                formatter.Serialize(file, RankingList);
+            try {
+                var formatter = new BinaryFormatter();
+                using (var file = File.OpenWrite("RankingList.bin"))
+                {
+                    formatter.Serialize(file, RankingList);
+                }
             }
+            catch (Exception e) { }
         }
 
         public void ClearAllData()

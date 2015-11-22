@@ -7,7 +7,7 @@ using DataEntities;
 
 namespace LogicInterfaces
 {
-    interface IRankingSource
+    public interface IRankingSource
     {
         List<PlayerGameRankingType> GetGameRankingsAll(GameType game, ParticipantTypes soloOrTeam);
         List<PlayerGameRankingType> GetGameRankings(GameType game, ParticipantTypes soloOrTeam, Ranks rank);
