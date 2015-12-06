@@ -34,7 +34,7 @@ namespace FilterGUI
         private void buttonLoad_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "Image Files (.jpg)|*.jpg|All Files (*.*)|*.*";
+            dialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|All files (*.*)|*.*";
             dialog.FilterIndex = 1;
             dialog.Multiselect = false;
             string imagePath;
@@ -53,9 +53,16 @@ namespace FilterGUI
         {
             if (Enum.GetNames(typeof(Filter)).Contains(selectFilter.SelectedItem.ToString()) && pictureBox1.Image != null)
             {
+                filter.Progress += updateBar;
                 filter.ApplyFilter((Filter)Enum.Parse(typeof(Filter), selectFilter.SelectedItem.ToString()));
                 pictureBox1.Image = filter.FilteredImage;
+                filter.Progress -= updateBar;
             }
+        }
+
+        private void updateBar(int x)
+        {
+            progressBar1.Value = x;
         }
 
         private void progressBar1_Click(object sender, EventArgs e)

@@ -13,6 +13,7 @@ namespace LogicImplementation
         private Bitmap image;
         private Bitmap output;
 
+
         public Image FilteredImage
         {
             get
@@ -89,8 +90,10 @@ namespace LogicImplementation
                 {
                     output.SetPixel(i, j, operation(image.GetPixel(i, j)));
                 }
+                Progress((int)(i * 100) / (image.Width - 1));
             }
         }
 
+        public event Action<int> Progress;
     }
 }

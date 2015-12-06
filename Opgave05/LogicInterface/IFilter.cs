@@ -11,6 +11,7 @@ namespace LogicInterface
     public interface IImageFilter
     {
         Image FilteredImage { get; }
+        event Action<int> Progress;
 
         void Load(string file);
 
