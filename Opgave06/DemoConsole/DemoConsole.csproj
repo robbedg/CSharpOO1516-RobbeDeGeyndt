@@ -58,6 +58,14 @@
       <Project>{2e64e53e-d8a8-4d2b-847f-99f1553f5e2e}</Project>
       <Name>GlobalTools</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LogicImplementation\LogicImplementation.csproj">
+      <Project>{229a4e99-f78c-4eec-a75d-49fa3a6dba69}</Project>
+      <Name>LogicImplementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogicInterface\LogicInterface.csproj">
+      <Project>{2a2a9ecf-dd1c-47fe-9641-c913d0aac0b6}</Project>
+      <Name>LogicInterface</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

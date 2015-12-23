@@ -1,14 +1,21 @@
-﻿using LogicInterface;
+﻿using BackendInterface;
+using BackendImplementation;
+using LogicInterface;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace LogicImplementation
 {
-    class MD5CollisionCalculator : IMD5CollisionCalculator
+    public class MD5CollisionCalculator : IMD5CollisionCalculator
     {
+        IGenerator generator = new Generator();
+        IWorker worker = new Worker();
+
         public int NrOfWorkerTasks { get; set; }
 
         public event Action<string> CollisionFound;
@@ -16,7 +23,8 @@ namespace LogicImplementation
 
         public void Abort()
         {
-            throw new NotImplementedException();
+            worker.Abort();
+            generator.Abort();
         }
 
         public void Close()
@@ -26,7 +34,24 @@ namespace LogicImplementation
 
         public void StartCalculatingMD5Collision(string hash, int passwordLength)
         {
-            throw new NotImplementedException();
+         
+            //quesize
+            Task GeneratorResult = Task.Run(() => { generator.Start(passwordLength, 250); });
+
+            Thread.Sleep(50);
+
+            Task workerTask = Task.Run(() => { worker.GetCollisions(hash, generator.qeue); });
+            worker.CollisionFound += CollisionFound;
+            try
+            {
+                workerTask.Wait();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
+            //worker.GetCollisions(hash, results);
         }
     }
 }

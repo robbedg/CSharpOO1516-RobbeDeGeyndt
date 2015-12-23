@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>LogicImplementation</RootNamespace>
     <AssemblyName>LogicImplementation</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,6 +45,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BackendImplementation\BackendImplementation.csproj">
+      <Project>{afadfdd7-b11c-41ca-95cc-078abbd30206}</Project>
+      <Name>BackendImplementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BackendInterface\BackendInterface.csproj">
+      <Project>{5113707a-def6-40a6-9265-8b4d226c858e}</Project>
+      <Name>BackendInterface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LogicInterface\LogicInterface.csproj">
       <Project>{2a2a9ecf-dd1c-47fe-9641-c913d0aac0b6}</Project>
       <Name>LogicInterface</Name>

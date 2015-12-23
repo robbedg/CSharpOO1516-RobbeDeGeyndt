@@ -6,18 +6,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections.Concurrent;
 using GlobalTools;
+using System.Threading;
 
 namespace BackendImplementation
 {
-    class Generator : IGenerator
+    public class Generator : IGenerator
     {
+        PasswordGenerator pg = null;
+
+        public ConcurrentQueue<string> qeue { get; set; }
+
+        private bool stop = false;
+
         public event Action GeneratorFinished;
         public event Action<ulong> ProgressChanged;
         public event Action Stalled;
 
         public void Abort()
         {
-            throw new NotImplementedException();
+            stop = true;
         }
 
         public void Close()
@@ -27,26 +34,35 @@ namespace BackendImplementation
 
         public ulong MaxCount()
         {
-            throw new NotImplementedException();
+            return pg.Count();
         }
 
-        public ConcurrentQueue<string> Start(int passWordLength, int maxQueueLength)
+        public void Start(int passWordLength, int maxQueueLength)
         {
+            pg = new PasswordGenerator(passWordLength);
             object signal = new object();
-            ConcurrentQueue<string> q = new ConcurrentQueue<string>();
+            qeue = new ConcurrentQueue<string>();
 
-            PasswordGenerator pg = new PasswordGenerator(passWordLength);
+            
 
             foreach (string val in pg)
             {
-                q.Enqueue(val);
+                if (stop)
+                {
+                    break;
+                }
+                qeue.Enqueue(val);
+
+                lock (signal)
+                {
+                    while (qeue.Count > maxQueueLength)
+                    {
+                        Thread.Sleep(5);
+                    }
+                }
+
             }
 
-            lock (signal)
-            {
-                while (q.Count > maxQueueLength);
-            }
-            return q;
         }
     }
 }

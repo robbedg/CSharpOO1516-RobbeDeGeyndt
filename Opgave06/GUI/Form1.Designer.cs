@@ -41,13 +41,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.UpDown = new System.Windows.Forms.NumericUpDown();
             this.labelPos = new System.Windows.Forms.Label();
+            this.textBoxOut = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownWorkers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(13, 192);
+            this.progressBar1.Location = new System.Drawing.Point(15, 225);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(259, 10);
             this.progressBar1.TabIndex = 23;
@@ -55,7 +56,7 @@
             // labelProgress
             // 
             this.labelProgress.AutoSize = true;
-            this.labelProgress.Location = new System.Drawing.Point(15, 176);
+            this.labelProgress.Location = new System.Drawing.Point(17, 209);
             this.labelProgress.Name = "labelProgress";
             this.labelProgress.Size = new System.Drawing.Size(21, 13);
             this.labelProgress.TabIndex = 22;
@@ -69,6 +70,7 @@
             this.buttonStart.TabIndex = 21;
             this.buttonStart.Text = "Start";
             this.buttonStart.UseVisualStyleBackColor = true;
+            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
             // 
             // buttonStop
             // 
@@ -182,11 +184,20 @@
             this.labelPos.Size = new System.Drawing.Size(0, 13);
             this.labelPos.TabIndex = 24;
             // 
+            // textBoxOut
+            // 
+            this.textBoxOut.Location = new System.Drawing.Point(20, 174);
+            this.textBoxOut.Name = "textBoxOut";
+            this.textBoxOut.Size = new System.Drawing.Size(100, 20);
+            this.textBoxOut.TabIndex = 25;
+            this.textBoxOut.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 212);
+            this.ClientSize = new System.Drawing.Size(284, 274);
+            this.Controls.Add(this.textBoxOut);
             this.Controls.Add(this.labelPos);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.labelProgress);
@@ -224,6 +235,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown UpDown;
         private System.Windows.Forms.Label labelPos;
+        private System.Windows.Forms.TextBox textBoxOut;
     }
 }
 

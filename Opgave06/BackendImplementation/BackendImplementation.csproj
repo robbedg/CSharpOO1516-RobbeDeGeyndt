@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BackendImplementation</RootNamespace>
     <AssemblyName>BackendImplementation</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -48,6 +49,10 @@
     <ProjectReference Include="..\BackendInterface\BackendInterface.csproj">
       <Project>{5113707a-def6-40a6-9265-8b4d226c858e}</Project>
       <Name>BackendInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GlobalTools\GlobalTools.csproj">
+      <Project>{2e64e53e-d8a8-4d2b-847f-99f1553f5e2e}</Project>
+      <Name>GlobalTools</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

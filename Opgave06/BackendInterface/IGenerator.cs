@@ -9,6 +9,8 @@ namespace BackendInterface
 {
     public interface IGenerator
     {
+        ConcurrentQueue<string> qeue { get; set; }
+
         /// <summary>
         /// Starts generating 'all capital alfa' passwords and
         /// passing them into the Queue thatis returned
@@ -19,7 +21,7 @@ namespace BackendInterface
         /// /// <param name="maxQueueLength">
         /// Max capacity of the Queue
         /// </param>
-        ConcurrentQueue<string> Start(int passWordLength, int maxQueueLength);
+        void Start(int passWordLength, int maxQueueLength);
 
         /// <summary>
         /// Aborts password generation
