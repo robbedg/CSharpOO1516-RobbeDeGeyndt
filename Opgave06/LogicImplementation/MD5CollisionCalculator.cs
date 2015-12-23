@@ -42,15 +42,6 @@ namespace LogicImplementation
 
             Task workerTask = Task.Run(() => { worker.GetCollisions(hash, generator.qeue); });
             worker.CollisionFound += CollisionFound;
-            try
-            {
-                workerTask.Wait();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
-
             //worker.GetCollisions(hash, results);
         }
     }
