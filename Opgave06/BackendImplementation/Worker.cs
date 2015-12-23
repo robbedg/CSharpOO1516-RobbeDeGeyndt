@@ -26,7 +26,7 @@ namespace BackendImplementation
 
         public void GetCollisions(string hash, ConcurrentQueue<string> buffer)
         {
-            decimal i = 0;
+            //decimal i = 0;
             do
             {
                 if (buffer == null)
@@ -55,8 +55,8 @@ namespace BackendImplementation
                         CollisionFound(woord);
                         
                     }
-                    i++;
-                    ProgressChanged(i);
+                    //i++;
+                    //ProgressChanged(i);
                 }
             } while (!stop);
         }
