@@ -13,7 +13,7 @@ namespace BackendImplementation
     public class Worker : IWorker
     {
         public event Action<string> CollisionFound;
-        public event Action<ulong> ProgressChanged;
+        public event Action<decimal> ProgressChanged;
         public event Action Stalled;
         private string hashwoord;
 

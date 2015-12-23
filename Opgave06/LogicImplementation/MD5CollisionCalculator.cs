@@ -16,6 +16,7 @@ namespace LogicImplementation
         IGenerator generator = new Generator();
         IWorker worker = new Worker();
 
+
         public int NrOfWorkerTasks { get; set; }
 
         public event Action<string> CollisionFound;
@@ -38,11 +39,11 @@ namespace LogicImplementation
             //quesize
             Task GeneratorResult = Task.Run(() => { generator.Start(passwordLength, 250); });
 
-            Thread.Sleep(50);
+            Task WorkerResult = Task.Run(() => { worker.GetCollisions(hash, generator.qeue); });
 
-            Task workerTask = Task.Run(() => { worker.GetCollisions(hash, generator.qeue); });
             worker.CollisionFound += CollisionFound;
-            //worker.GetCollisions(hash, results);
+            worker.ProgressChanged += ProgressChanged;
+
         }
     }
 }
