@@ -21,7 +21,7 @@ namespace BackendInterface
         /// <summary>
         /// returns nr Of Combinations tested, called aprox.every 50 msec
         /// </summary>
-        event Action<ulong> ProgressChanged;
+        event Action<decimal> ProgressChanged;
         
         /// <summary>
         /// returns a found collision
