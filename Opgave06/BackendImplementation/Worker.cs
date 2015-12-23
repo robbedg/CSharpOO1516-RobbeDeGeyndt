@@ -26,6 +26,7 @@ namespace BackendImplementation
 
         public void GetCollisions(string hash, ConcurrentQueue<string> buffer)
         {
+            decimal i = 0;
             do
             {
                 if (buffer == null)
@@ -43,6 +44,8 @@ namespace BackendImplementation
                         Thread.Sleep(5);
                     }
 
+                    
+
                     hashwoord = MD5Calculator.GetHash(woord);
                     Console.WriteLine(hashwoord);
                     
@@ -52,7 +55,8 @@ namespace BackendImplementation
                         CollisionFound(woord);
                         
                     }
-
+                    i++;
+                    ProgressChanged(i);
                 }
             } while (!stop);
         }

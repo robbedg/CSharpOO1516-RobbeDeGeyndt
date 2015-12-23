@@ -25,9 +25,11 @@ namespace GUI
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
+            //mcc.ProgressChanged += ProgressHandler;
             mcc.CollisionFound += CollisionHandler;
             String hash = MD5Calculator.GetHash(textBox1.Text.ToUpper());
             mcc.StartCalculatingMD5Collision(hash, (int)UpDown.Value);
+            //mcc.ProgressChanged -= ProgressHandler;
 
 
         }
@@ -43,9 +45,20 @@ namespace GUI
             
         }
 
+        private void ProgressHandler(decimal i)
+        {
+            //int x = (int)(Convert.ToDouble(i) / (Math.Pow(26, Convert.ToDouble(UpDown.Value))));
+            //progressBar1.Value = x;
+        }
+
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonStop_Click(object sender, EventArgs e)
+        {
+            mcc.Abort();
         }
     }
 }
