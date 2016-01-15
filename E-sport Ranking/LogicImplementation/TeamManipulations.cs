@@ -20,7 +20,7 @@ namespace LogicImplementation
                 grda.Teams.Remove(team);
             }
            grda.Teams.Add(team);
-            return true;
+           return true;
         }
 
         public List<MatchType> GetGameMatchesForTeam(GameType game, TeamType team)

@@ -9,11 +9,11 @@ namespace DataEntities
     public class TeamType : IEquatable<TeamType>
     {
         public List<PlayerType> Members { get; set; }
-        public String Name { get; set; }
+        public string Name { get; set; }
 
         public static bool operator ==(TeamType a, TeamType b)
         {
-            return (a.Members == b.Members) && (a.Name == b.Name);
+            return a.Members.All(b.Members.Contains) && (a.Name == b.Name);
         }
 
         public static bool operator !=(TeamType a, TeamType b)
